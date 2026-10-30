@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福岡市薬剤師連盟 Instagram発信の指針と運用ハンドブック</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 印刷用スタイル（白地・インク節約・A4最適化） */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: #0f172a !important;
+            }
+            * {
+                background: transparent !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+                color: #000 !important;
+            }
+            .border, [class*="border-"] {
+                border-color: #cbd5e1 !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- ヘッダー（固定） -->
+    <header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm transition-all duration-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white shadow-sm">
+                    <!-- Instagram風アイコン -->
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke-width="2"></rect>
+                        <path stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" stroke-width="2"></line>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-brand-700 tracking-wider block">福岡市薬剤師連盟</span>
+                    <h1 class="text-sm sm:text-base font-bold text-slate-900 leading-tight">Instagram発信指針 ＆ 実務ハンドブック</h1>
+                </div>
+            </div>
+
+            <!-- 右側ユーティリティ -->
+            <div class="flex items-center gap-2 no-print">
+                <button type="button" id="btn-font-size" title="文字サイズ変更" class="p-2 rounded-lg text-slate-600 hover:text-brand-700 hover:bg-slate-100 transition-colors flex items-center gap-1 text-xs font-medium border border-slate-200 cursor-pointer">
+                    <span id="font-size-label">標準</span>
+                    <span class="text-xs font-bold">A</span>
+                </button>
+                <button type="button" id="btn-copy-code" title="全HTMLコードをコピー" class="p-2 rounded-lg text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 flex items-center gap-1.5 text-xs font-bold cursor-pointer">
+                    <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>コード複製</span>
+                </button>
+                <button type="button" id="btn-print" title="印刷またはPDFとして保存" class="p-2 rounded-lg text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 flex items-center gap-1.5 text-xs font-bold cursor-pointer">
+                    <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    <span>印刷 / PDF</span>
+                </button>
+                <button type="button" id="btn-share-file" title="ファイルを共有・保存" class="p-2 rounded-lg text-white bg-emerald-600 hover:bg-emerald-700 transition-colors flex items-center gap-1.5 text-xs font-bold shadow-xs cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                    </svg>
+                    <span>ファイルを送る</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        
+        <!-- ヒーローセクション / 原点の共有（白地ベース） -->
+        <section class="mb-12">
+            <div class="relative overflow-hidden rounded-2xl bg-white border border-slate-200 border-l-8 border-l-brand-600 p-6 sm:p-10 shadow-sm">
+                <p class="text-brand-700 font-bold tracking-wider text-xs sm:text-sm uppercase mb-2">
+                    Mission & Philosophy
+                </p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-snug mb-4 text-slate-900">
+                    暮らしから、まちと政治を考える。<br>
+                    <span class="text-brand-700">そして、よりよい暮らしへ。</span>
+                </h2>
+                <div class="mt-6 pt-5 border-t border-slate-200 bg-slate-50/70 rounded-xl p-4 sm:p-5">
+                    <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                        このペーパーは、投稿の仕方を細かく縛るためのものではありません。<br class="hidden sm:inline">
+                        迷ったときに、<strong>「私たちは何を大切に伝えたかったのか」</strong>を思い出すための、原点の共有です。
+                    </p>
+                </div>
+            </div>
+
+            <!-- クイック目次バー -->
+            <nav class="mt-6 p-2 bg-white rounded-xl border border-slate-200 shadow-sm flex items-center gap-2 overflow-x-auto text-xs font-medium text-slate-600 no-print">
+                <span class="px-2.5 py-1 text-slate-400 font-semibold shrink-0">目次</span>
+                <a href="#why-this-policy" class="px-3 py-1.5 rounded-lg bg-teal-50 text-brand-800 font-semibold hover:bg-teal-100 transition shrink-0 whitespace-nowrap">【背景】心理的分析</a>
+                <a href="#insta-tactics" class="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition shrink-0 whitespace-nowrap">⚡ アルゴリズム＆運用戦略</a>
+                <a href="#sec-1" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-700 transition shrink-0 whitespace-nowrap">1. 発信の目的</a>
+                <a href="#sec-2" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-700 transition shrink-0 whitespace-nowrap">2. 組織の前に社会</a>
+                <a href="#sec-3" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-700 transition shrink-0 whitespace-nowrap">3. 会と連盟の違い</a>
+                <a href="#sec-4" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-700 transition shrink-0 whitespace-nowrap">4. 大切にしたい投稿</a>
+                <a href="#checklist" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-700 transition shrink-0 whitespace-nowrap font-semibold text-brand-700 bg-brand-50">5. 投稿前チェック</a>
+                <a href="#sec-6" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-700 transition shrink-0 whitespace-nowrap">6. 目指したいこと</a>
+            </nav>
+        </section>
+
+        <!-- 本文コンテナ -->
+        <div id="content-container" class="space-y-12 sm:space-y-16 text-slate-700 prose-body text-base transition-all duration-150">
+
+            <!-- 【背景】客観的心理分析セクション（白地ベース） -->
+            <section id="why-this-policy" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 border-t-4 border-t-brand-600 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold border border-brand-200">戦略の出発点</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">なぜ今、あえて「呼びかけ型」にしないのか（心理的客観視）</h3>
+                </div>
+
+                <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                    「仲間を増やしたい」「多くの人に関心を持ってほしい」という思いは活動の根底にある当たり前で大切な願いです。決して仲間づくりを否定するものではありません。<br>
+                    しかし、各地の連盟アカウントの先行事例を客観的に見つめ直したとき、<strong>「熱心に取り組むこと」と「相手に届き心を開いてもらうこと」の間には、SNS特有の心理的なギャップ</strong>が存在することが見えてきました。
+                </p>
+
+                <!-- 心理ギャップの対比図解 -->
+                <div class="grid sm:grid-cols-2 gap-4 my-6 text-slate-900">
+                    <div class="bg-rose-50/70 border border-rose-200 p-4 sm:p-5 rounded-xl">
+                        <div class="flex items-center gap-2 mb-2 text-rose-800 font-bold text-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                            各地で陥りがちな「呼びかけ型」の逆効果
+                        </div>
+                        <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-rose-600 font-bold">✕</span>
+                                <span><strong>勧誘への心理的抵抗（身構え）：</strong>「参加しよう」「仲間になろう」が先行すると、受け手は無意識に「勧誘されている」「政治的で敷居が高い組織」と警戒し、フォローや閲覧そのものを敬遠してしまう。</span>
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-rose-600 font-bold">✕</span>
+                                <span><strong>内輪感・排他性の印象：</strong>熱心な活動報告や役員の集合写真ばかりだと、部外者から見ると「特定の関係者だけで盛り上がっている閉じた世界」に見え、かえって距離が生まれる。</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-emerald-50/70 border border-emerald-300 p-4 sm:p-5 rounded-xl">
+                        <div class="flex items-center gap-2 mb-2 text-emerald-900 font-bold text-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+                            福岡市薬剤師連盟が目指す「共感・惹きつけ型」
+                        </div>
+                        <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-emerald-700 font-bold">◎</span>
+                                <span><strong>安心と信頼の先渡し：</strong>日々の暮らしの景色や身近な疑問から入り、「この組織は自分たちの暮らしの土台や安心を本気で考えてくれている」という信頼を先に築く。</span>
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-emerald-700 font-bold">◎</span>
+                                <span><strong>共感の結果として仲間が集まる：</strong>「無理に引っ張る」のではなく、「活動の意味に納得し、自然と応援したくなる（惹きつける）」という長期的で強固な仲間づくりを実現する。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700">
+                    <p class="font-bold text-brand-800 mb-1">💡 心理的客観視の鉄則</p>
+                    <p class="leading-relaxed">
+                        一生懸命活動している人ほど、「こんなに頑張っているから知ってほしい！」という熱量が前に出ます。それは誇るべき情熱です。だからこそ一歩引いて、<strong>「まだ連盟を知らない薬剤師や地域の人がスマホ画面をスクロールしたとき、どう感じるか」</strong>という相手目線の心理を大切にしながら、言葉を紡いでいきます。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 【実践編】Meta AI / Instagramアルゴリズム完全攻略ハンドブック -->
+            <section id="insta-tactics" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 border-t-4 border-t-indigo-600 shadow-sm">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold border border-indigo-200">Meta AI アルゴリズム分析</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">投稿の種類・効果と実践的テクニック</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+                    Instagram（Meta）の推薦AIは、「ユーザーがどれだけ深く関心を持ち、時間を費やしたか（滞在時間とシグナル）」を最優先に評価します。各フォーマットの特性を理解して賢く使い分けます。
+                </p>
+
+                <!-- フォーマット別カード -->
+                <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                    <!-- カルーセル -->
+                    <div class="bg-slate-50/80 border border-slate-200 rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                                <span class="text-indigo-600">📑</span> カルーセル（複数枚スワイプ投稿）
+                            </span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">連盟最重要★</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                            <li>・<strong>効果：</strong>スワイプにより「滞在時間」が大幅に伸び、Metaから最高評価を受けやすい。1枚目で反応しなかったフォロワーに対し、後日2枚目をフィードに再表示してくれる仕様あり。</li>
+                            <li>・<strong>推奨構成：</strong>5〜8枚。1枚目（惹きつける疑問・暮らしの景色）→ 2〜4枚目（課題と制度の背景）→ 最終枚（まとめ・保存促進）。</li>
+                        </ul>
+                    </div>
+
+                    <!-- リール -->
+                    <div class="bg-slate-50/80 border border-slate-200 rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                                <span class="text-rose-600">🎬</span> リール（ショート動画）
+                            </span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold">非フォロワー拡散</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                            <li>・<strong>全体の長さ：</strong><strong>7秒〜15秒</strong>が最適。長尺より、短尺で完全視聴・ループ視聴される方がアルゴリズム評価が跳ね上がる。</li>
+                            <li>・<strong>1カットの長さ：</strong><strong>1.5秒〜2.5秒</strong>でテンポよく切り替える。静止画スライドや福岡の街並み動画にテロップを重ねるだけで十分成立。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 音源（音楽）の選択 -->
+                    <div class="bg-slate-50/80 border border-slate-200 rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                                <span class="text-amber-600">🎵</span> 音楽（音源）の選択効果
+                            </span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold">発見タブ掲載率UP</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                            <li>・<strong>トレンド音源：</strong>右斜め上矢印（↗）がついた流行音源を選ぶと、音源ページからの流入が増加。</li>
+                            <li>・<strong>連盟のトーン：</strong>騒がしい曲ではなく、穏やかなLo-Fi、アコースティック、落ち着いたピアノ曲を選択し、音量はBGM程度（10〜15%）に設定。</li>
+                        </ul>
+                    </div>
+
+                    <!-- ストーリーズ -->
+                    <div class="bg-slate-50/80 border border-slate-200 rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                                <span class="text-cyan-600">⭕</span> ストーリーズの役割
+                            </span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-cyan-100 text-cyan-800 font-bold">親密度（シグナル）</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                            <li>・<strong>既存フォロワーとの親密度：</strong>投票スタンプ・質問箱・絵文字スライダーを置くと、DM同等の高シグナルを獲得。</li>
+                            <li>・<strong>ハイライト活用：</strong>「指針について」「政策と暮らし」「よくある質問」などをプロフィール下に固定化。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- タグ付けとジオタグ -->
+                <div class="mb-8 p-4 bg-slate-50/70 border border-slate-200 rounded-xl">
+                    <h4 class="text-xs sm:text-sm font-bold text-slate-800 mb-2 flex items-center gap-1.5">
+                        <span>🏷️</span> ハッシュタグとタグ付け・位置情報の効果
+                    </h4>
+                    <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-600">
+                        <div>
+                            <p class="font-semibold text-slate-700 mb-1">ハッシュタグ（厳選3〜5個）</p>
+                            <p class="leading-relaxed">30個の乱れ打ちはスパム判定のリスクあり。Meta AIは本文の自然言語を直接理解するため、「#福岡市薬剤師連盟 #福岡医療 #在宅医療 #地域包括ケア」など具体性の高いものを少数添えるのが効果的。</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-700 mb-1">位置情報（ジオタグ）の必須活用</p>
+                            <p class="leading-relaxed">「福岡市」「天神」「博多」などの位置情報を必ず付与。福岡エリアでInstagramを見ている地域住民・薬学生・若手薬剤師の発見フィードに優先推薦されます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- リアクションのアルゴリズム評価ヒエラルキー -->
+                <div class="mb-8">
+                    <h4 class="text-xs sm:text-sm font-bold text-slate-800 mb-3 flex items-center gap-1.5">
+                        <span>⚖️</span> リアクションの種類とMetaアルゴリズムにおける評価重み
+                    </h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-3 p-3 bg-white border border-emerald-300 rounded-lg shadow-2xs">
+                            <span class="px-2 py-1 bg-emerald-600 text-white text-xs font-bold rounded shrink-0">極めて高評価 ★★★★★</span>
+                            <div class="text-xs">
+                                <span class="font-bold text-slate-900">「保存（ブックマーク）」＆「DMシェア」</span>
+                                <p class="text-slate-600 mt-0.5">「あとで見返したい有益な知恵」「誰かに教えたい価値ある情報」とAIが判定。発見タブ・おすすめ欄への露出トリガー第1位。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 bg-white border border-indigo-200 rounded-lg">
+                            <span class="px-2 py-1 bg-indigo-600 text-white text-xs font-bold rounded shrink-0">高い評価 ★★★★☆</span>
+                            <div class="text-xs">
+                                <span class="font-bold text-slate-900">「コメント（特に文章）」＆ 公式からの返信</span>
+                                <p class="text-slate-600 mt-0.5">絵文字だけでなく、短い文章でのコメントやそれに対する公式アカウントからの返信は、滞在時間と会話スコアを急上昇させます。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg">
+                            <span class="px-2 py-1 bg-slate-600 text-white text-xs font-bold rounded shrink-0">基準評価 ★★★☆☆</span>
+                            <div class="text-xs">
+                                <span class="font-bold text-slate-900">「プロフィール遷移・フォロー」</span>
+                                <p class="text-slate-600 mt-0.5">投稿を見て「どんなアカウントか」気になってプロフィールをタップする行動は強い関心として高く評価されます。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg">
+                            <span class="px-2 py-1 bg-slate-400 text-white text-xs font-bold rounded shrink-0">基本評価 ★★☆☆☆</span>
+                            <div class="text-xs">
+                                <span class="font-bold text-slate-900">「いいね（❤️）」</span>
+                                <p class="text-slate-600 mt-0.5">タップが容易なため、アルゴリズム単体での評価重みは「保存」や「コメント」に比べて相対的に低めです。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 協力者（身内・アンバサダー）の効果的な援護射撃方法 -->
+                <div class="p-5 bg-white border-2 border-brand-500 rounded-xl shadow-xs">
+                    <div class="flex items-center gap-2 mb-2 text-brand-900 font-bold text-sm sm:text-base">
+                        <span>🤝</span> 役員・会員（身内の協力者）の正しい応援手順
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+                        ただ全員で一斉に「❤️いいね」を押すだけではアルゴリズム起爆には不十分です。<strong>初速（投稿から30分〜1時間以内）</strong>に以下の順序で協力すると、外部の一般ユーザーや若手薬剤師に投稿が届きやすくなります。
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
+                            <span class="block font-bold text-emerald-700 mb-1">ステップ1：まず「保存」</span>
+                            <p class="text-slate-600">投稿を見たら、右下のしおりマークをタップして<strong>「保存」</strong>。これがAIに「価値ある投稿」と認識させる最大シグナルになります。</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
+                            <span class="block font-bold text-emerald-700 mb-1">ステップ2：1行の感想コメント</span>
+                            <p class="text-slate-600">スタンプだけでなく「地域の〇〇でも同じ課題を感じます」「勉強になります」など<strong>1行の具体的な言葉</strong>を残し、公式がそれに返信します。</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
+                            <span class="block font-bold text-emerald-700 mb-1">ステップ3：一言添えてストーリーズ</span>
+                            <p class="text-slate-600">紙飛行機マークから自身のストーリーズへシェア。「福岡のこれ大事」「知っておきたい」等、<strong>個人の感想を一言添える</strong>ことで輪が広がります。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第1章 -->
+            <section id="sec-1" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-700 font-bold text-sm border border-brand-200">1</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">そもそも、何のために発信するのでしょう</h3>
+                </div>
+
+                <div class="space-y-4 text-sm sm:text-base leading-relaxed text-slate-700">
+                    <p>
+                        Instagramを始めると、「何を投稿しよう」「どんな写真を載せよう」「どうすれば見てもらえるだろう」と考えることが増えていきます。もちろん、それも大切です。
+                    </p>
+                    <p class="font-semibold text-slate-900 bg-brand-50/50 p-3 rounded-lg border-l-4 border-brand-500">
+                        でも、その前に、もう一つ考えておきたいことがあります。<br>
+                        私たちは、何を大切にして、このまちの人たちに何を伝えたいのでしょう。
+                    </p>
+                    <p>
+                        私たちが見ているのは、薬局の中だけではありません。地域の景色や、そこで暮らす人たちの日常です。安心して暮らせること。困ったときに相談できること。年齢を重ねても、住み慣れた地域で自分らしく暮らせること。人や組織がつながり、支え合えること。
+                    </p>
+                    <p>
+                        そんな日常は、一人ひとりの努力だけで成り立つものではありません。地域の人たちの力や専門性に加えて、それらを活かす仕組みも必要です。
+                    </p>
+                    <p>
+                        そして、医療や社会保障を支える制度、予算、地域の取り組みなどは、議会や政治の場で議論され、決められていきます。だから政治は、遠い世界の話ではありません。私たちの暮らしとつながっています。
+                    </p>
+                    <p class="font-medium text-brand-800">
+                        私たちは、そのつながりを、できるだけ身近な言葉で伝えていきたいと考えています。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 第2章 -->
+            <section id="sec-2" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-700 font-bold text-sm border border-brand-200">2</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">組織のことを伝える前に、社会にとって大切なことを</h3>
+                </div>
+
+                <div class="space-y-4 text-sm sm:text-base leading-relaxed text-slate-700">
+                    <p>
+                        連盟には、伝えたい活動があります。誰かと話し合ったこと、政策について考えたこと、要望を届けたこと、仲間と取り組んだこと。どれも大切な活動です。
+                    </p>
+                    <p>
+                        ただ、投稿を見た人が、必ずしも連盟の活動に関心を持っているとは限りません。会議の写真や活動報告だけでは、「自分の暮らしとどう関係するのだろう」と感じる人もいるでしょう。熱心に活動している会員であっても、その意味が伝わらなければ、少し距離を感じてしまうかもしれません。
+                    </p>
+
+                    <!-- コアメッセージのカード（白地＋淡い枠線） -->
+                    <div class="my-5 p-5 bg-white border border-slate-200 border-l-4 border-l-brand-600 rounded-xl shadow-2xs">
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-700 text-lg font-bold">Point</span>
+                            <div>
+                                <p class="text-base sm:text-lg font-bold text-slate-900 mb-1">
+                                    「何をしたか」だけでなく、「なぜそれが大切なのか」「地域の暮らしにどんな関係があるのか」も伝える
+                                </p>
+                                <p class="text-xs sm:text-sm text-slate-600">
+                                    単なる内部報告にとどめず、社会に向けたメッセージへと変換します。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50/60 border border-amber-200 rounded-xl p-4 sm:p-5">
+                        <h4 class="text-xs sm:text-sm font-bold text-amber-900 flex items-center gap-2 mb-2">
+                            <span>💡 具体例：議員との面会を投稿する場合</span>
+                        </h4>
+                        <div class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                            <div class="bg-white/80 p-3 rounded-lg border border-amber-100">
+                                <span class="font-bold text-slate-600 block mb-1">これまでありがちな報告</span>
+                                <p class="text-slate-600">「〇〇議員と面会し、現場の要望書を手交して意見交換を行いました（写真添付）」</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-emerald-300">
+                                <span class="font-bold text-emerald-800 block mb-1">伝わるメッセージ化</span>
+                                <p class="text-slate-700">「地域の夜間救急や在宅調剤で今起きている課題を〇〇議員へ共有。住民が夜間でも安心できる仕組みづくりへ何が必要かを話し合いました」</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        連盟の名前を知ってもらうことや、投稿を見てもらうこと自体が目的なのではありません。私たちが大切にしていることを伝え、その先にある暮らしや社会について、一緒に考えるきっかけをつくる。それが発信の出発点です。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 第3章：会と連盟の違い（インタラクティブ比較） -->
+            <section id="sec-3" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-700 font-bold text-sm border border-brand-200">3</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">福岡市薬剤師会と、福岡市薬剤師連盟</h3>
+                </div>
+                <p class="text-sm text-slate-600 mb-6">
+                    二つのアカウントは別々の地域を見ているわけではありません。同じ福岡のまちと暮らしを見つめ、<strong>「どこから光を当てるか」</strong>という視点が異なります。
+                </p>
+
+                <!-- 基本対比テーブル -->
+                <div class="overflow-x-auto rounded-xl border border-slate-200 mb-8">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-slate-700 font-bold">
+                            <tr>
+                                <th class="p-3 sm:p-4 w-1/2 border-r border-slate-200 text-blue-900">福岡市薬剤師会（実践・支援）</th>
+                                <th class="p-3 sm:p-4 w-1/2 text-brand-900">福岡市薬剤師連盟（仕組み・政策）</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y border-slate-100">
+                            <tr class="hover:bg-slate-50/50">
+                                <td class="p-3 sm:p-4 border-r border-slate-200 align-top">
+                                    地域の皆さんの健康や暮らしに役立つ情報を届ける。
+                                </td>
+                                <td class="p-3 sm:p-4 align-top font-medium text-slate-900">
+                                    地域の暮らしから課題を見つめ、制度や政策とのつながりを考える。
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50">
+                                <td class="p-3 sm:p-4 border-r border-slate-200 align-top">
+                                    薬や健康について知っておきたいこと、備えておきたいことを伝える。
+                                </td>
+                                <td class="p-3 sm:p-4 align-top font-medium text-slate-900">
+                                    その支援を地域で続けるには、どんな仕組みや支えが必要かを考える。
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/50">
+                                <td class="p-3 sm:p-4 border-r border-slate-200 align-top">
+                                    薬剤師会が地域で行っている活動や、住民を支える取り組みを伝える。
+                                </td>
+                                <td class="p-3 sm:p-4 align-top font-medium text-slate-900">
+                                    地域の取り組みを支える制度、政策、議会や政治の動きを、暮らしとの関係から伝える。
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 具体的な切り口の切り替えタブ -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">具体例で見る切り口の違い</span>
+                        <div class="inline-flex p-1 bg-white border border-slate-200 rounded-lg text-xs" role="tablist">
+                            <button onclick="switchTab('disaster')" id="tab-btn-disaster" class="px-3 py-1 rounded-md font-medium transition-all bg-brand-600 text-white shadow-2xs">災害と薬</button>
+                            <button onclick="switchTab('elderly')" id="tab-btn-elderly" class="px-3 py-1 rounded-md font-medium transition-all text-slate-600 hover:text-slate-900">高齢者の暮らし</button>
+                        </div>
+                    </div>
+
+                    <!-- 災害と薬 タブ -->
+                    <div id="tab-content-disaster" class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200">
+                            <div class="text-blue-800 font-bold mb-1 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-blue-600"></span> 薬剤師会の発信
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                「災害に備えて薬の情報をどう管理するか」「お薬手帳アプリの活用法」「避難所で薬局や薬剤師がどんな支援をするか」など、実践的・直接的な備えを伝える。
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-emerald-300">
+                            <div class="text-emerald-800 font-bold mb-1 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> 薬剤師連盟の発信
+                            </div>
+                            <p class="text-slate-700 leading-relaxed font-medium">
+                                そこから一歩広げて、「災害時にも薬を必要とする人を支え続けるには、行政・医療機関・薬局の連携協定や、どのような制度・備蓄予算体制が必要か」を考える。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 高齢者の暮らし タブ（初期非表示） -->
+                    <div id="tab-content-elderly" class="hidden grid sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200">
+                            <div class="text-blue-800 font-bold mb-1 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-blue-600"></span> 薬剤師会の発信
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                「在宅医療における薬剤師の訪問服薬指導」「飲み忘れを防ぐお薬カレンダーの使い方」「家族の介護負担を減らす工夫」など、現場の実践を伝える。
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-emerald-300">
+                            <div class="text-emerald-800 font-bold mb-1 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> 薬剤師連盟の発信
+                            </div>
+                            <p class="text-slate-700 leading-relaxed font-medium">
+                                「その訪問指導を福岡の隅々まで持続可能にするための人材確保、地域枠予算、介護保険・診療報酬の改定動向、政策的支援の必要性」について考える。
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                        ※これは厳しい線引きではありません。大切なのは単に同じ投稿を繰り返すのではなく、互いの視点から価値を加え、補い合う関係を作ることです。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 第4章 -->
+            <section id="sec-4" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-700 font-bold text-sm border border-brand-200">4</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">どんな投稿を大切にしたいか（5つの指針）</h3>
+                </div>
+
+                <div class="grid gap-4">
+                    <div class="p-4 sm:p-5 rounded-xl border border-slate-200 hover:border-brand-500 transition-colors">
+                        <div class="flex items-center gap-2 mb-2 font-bold text-slate-900 text-sm sm:text-base">
+                            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                            暮らしの景色から始める
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            いきなり組織や制度の話をするのではなく、地域で起きていること、誰かが感じている困りごと、日々の暮らしの中にある疑問から始めてみます。
+                        </p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl border border-slate-200 hover:border-brand-500 transition-colors">
+                        <div class="flex items-center gap-2 mb-2 font-bold text-slate-900 text-sm sm:text-base">
+                            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                            「何をしたか」に、「なぜ大切か」を添える
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            活動報告も大切です。その活動が必要とされる背景や、暮らしとのつながりを一言でも添えることで、関係者以外にも意味が伝わりやすくなります。
+                        </p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl border border-slate-200 hover:border-brand-500 transition-colors">
+                        <div class="flex items-center gap-2 mb-2 font-bold text-slate-900 text-sm sm:text-base">
+                            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                            難しい話を、わかる言葉で
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            制度や政策、予算、議会の話は、暮らしと関係があっても言葉だけでは遠く感じられることがあります。専門用語を並べるのではなく、具体例を使い、何が論点なのかを一つずつ伝えます。
+                        </p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl border border-slate-200 hover:border-brand-500 transition-colors">
+                        <div class="flex items-center gap-2 mb-2 font-bold text-slate-900 text-sm sm:text-base">
+                            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                            事実と意見を分け、根拠を大切にする
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            政治や政策を扱うからこそ、確認できる事実、さまざまな立場の意見、連盟としての考えを混同しないようにします。必要に応じて資料や根拠を示し、利点だけでなく課題も丁寧に扱います。
+                        </p>
+                    </div>
+
+                    <div class="p-4 sm:p-5 rounded-xl border border-slate-200 hover:border-brand-500 transition-colors">
+                        <div class="flex items-center gap-2 mb-2 font-bold text-slate-900 text-sm sm:text-base">
+                            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                            すべての投稿を政治の話にしなくてもよい
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            毎回、政治や制度に結びつける必要はありません。まずは地域の暮らしや人の思いを伝える投稿があってもよいのです。その一つひとつが私たちの大切にしたい社会を表していれば、アカウント全体として自然な一貫性が生まれます。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第5章：投稿前セルフチェック（インタラクティブ） -->
+            <section id="checklist" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 border-t-4 border-t-emerald-600 shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-700 font-bold text-sm border border-brand-200">5</span>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">投稿を作るとき、少し立ち止まって考えたいこと</h3>
+                    </div>
+                    <button onclick="resetChecklist()" class="text-xs text-slate-500 hover:text-brand-700 underline no-print cursor-pointer">リセット</button>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mb-6">
+                    難しいチェックリストを完璧に埋める必要はありません。投稿ボタンを押す前に、心の中でそっと問いかけてみてください。
+                </p>
+
+                <div class="space-y-3" id="checklist-items">
+                    <!-- チェック項目 1 -->
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                        <input type="checkbox" onchange="updateCheckCount()" class="mt-1 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300">
+                        <span class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                            この投稿は、地域で暮らす人にとって、どんな意味があるだろう。
+                        </span>
+                    </label>
+
+                    <!-- チェック項目 2 -->
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                        <input type="checkbox" onchange="updateCheckCount()" class="mt-1 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300">
+                        <span class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                            活動や人物を紹介するだけでなく、私たちが大切にしていることも伝わるだろうか。
+                        </span>
+                    </label>
+
+                    <!-- チェック項目 3 -->
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                        <input type="checkbox" onchange="updateCheckCount()" class="mt-1 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300">
+                        <span class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                            薬剤師や連盟をよく知らない人にも、内容が伝わる言葉遣いになっているだろうか。
+                        </span>
+                    </label>
+
+                    <!-- チェック項目 4 -->
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                        <input type="checkbox" onchange="updateCheckCount()" class="mt-1 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300">
+                        <span class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                            事実や根拠は確認できているだろうか。違う立場の人が読んでも、誤解を招きにくいだろうか。
+                        </span>
+                    </label>
+
+                    <!-- チェック項目 5 -->
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                        <input type="checkbox" onchange="updateCheckCount()" class="mt-1 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300">
+                        <span class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                            閲覧数や「いいね」を増やすことが、いつの間にか目的になっていないだろうか。
+                        </span>
+                    </label>
+                </div>
+
+                <div id="check-feedback" class="mt-4 p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600 text-center">
+                    チェック中: <span id="check-score" class="font-bold text-brand-700">0</span> / 5 項目確認済み
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2">
+                    <p>
+                        もちろん、すべての投稿が多くの人に届くわけではありません。大切なテーマでも、すぐに反応が得られないことはあります。数字は発信を振り返る手がかりですが、数字だけで投稿の価値が決まるわけではありません。
+                    </p>
+                    <p>
+                        熱心な仲間に届くことも大切です。そこから少しずつ、関心のある地域の人や、これまで連盟を知らなかった人にも届く可能性を育てていければと思います。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 第6章：私たちが目指したいこと -->
+            <section id="sec-6" class="scroll-mt-20 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-brand-50 text-brand-700 font-bold text-sm border border-brand-200">6</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900">私たちが目指したいこと</h3>
+                </div>
+
+                <div class="space-y-4 text-sm sm:text-base leading-relaxed text-slate-700">
+                    <p>
+                        私たちは、政治の話をしたいから、暮らしを入口にするのではありません。よりよい暮らしを考えていくと、人の努力や善意だけでは解決できないことがあり、地域のつながりや制度、政策についても考える必要がある。だから、そのつながりを伝えていきたいのです。
+                    </p>
+
+                    <ul class="space-y-2 my-4 pl-1 text-slate-800 font-medium text-xs sm:text-sm">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
+                            住み慣れた地域で安心して暮らせること。
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
+                            困ったときに支え合えること。
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
+                            専門性を持つ人や地域の資源が、必要な場面で活かされること。
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
+                            そして、それを一人ひとりの頑張りだけに任せず、社会の仕組みとして支えられること。
+                        </li>
+                    </ul>
+
+                    <p>
+                        そんな地域の未来を考えるきっかけを、Instagramからもつくっていきたい。
+                    </p>
+                    <p>
+                        連盟の活動を知ってもらうことは、そのための一つの手段です。投稿の数や見栄え、反応の大きさだけを追うのではなく、何を大切に伝えようとしているのかを、いつでも思い出せるアカウントでありたいと思います。
+                    </p>
+                </div>
+
+                <!-- 結びのスローガン（白地＋すっきりした枠線） -->
+                <div class="mt-8 text-center p-6 bg-white border border-slate-200 border-t-4 border-t-brand-600 rounded-xl shadow-2xs">
+                    <p class="text-xs uppercase tracking-widest text-brand-700 font-bold mb-2">Conclusion</p>
+                    <p class="text-lg sm:text-xl font-bold tracking-tight text-slate-900">
+                        暮らしから、まちと政治を考える。<br class="sm:hidden">
+                        そして、よりよい暮らしへ。
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- フッター -->
+        <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-500 no-print">
+            <p class="mb-1">福岡市薬剤師連盟 Instagram運用・発信指針</p>
+            <p>暮らしとまち、そして社会をつなぐためのプラットフォームとして</p>
+        </footer>
+    </main>
+
+    <!-- 操作案内・代替モーダル（iOSなどの制限時用） -->
+    <div id="notice-modal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4 hidden no-print">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-200 relative">
+            <div id="notice-icon" class="text-3xl mb-2 text-center">📄</div>
+            <h4 id="notice-title" class="font-bold text-slate-900 text-base text-center mb-2">ご案内</h4>
+            <div id="notice-body" class="text-xs text-slate-600 leading-relaxed space-y-2 mb-5">
+                <!-- 動的テキスト挿入 -->
+            </div>
+            <div class="flex gap-2">
+                <button type="button" onclick="closeNoticeModal()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition cursor-pointer">閉じる</button>
+                <button type="button" id="notice-action-btn" class="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition hidden cursor-pointer">実行</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript：iOS / iPhone最適化エンジン -->
+    <script>
+        // DOM要素
+        const btnFontSize = document.getElementById('btn-font-size');
+        const btnCopyCode = document.getElementById('btn-copy-code');
+        const btnPrint = document.getElementById('btn-print');
+        const btnShareFile = document.getElementById('btn-share-file');
+        const contentContainer = document.getElementById('content-container');
+        const fontSizeLabel = document.getElementById('font-size-label');
+        const noticeModal = document.getElementById('notice-modal');
+        const noticeTitle = document.getElementById('notice-title');
+        const noticeBody = document.getElementById('notice-body');
+        const noticeIcon = document.getElementById('notice-icon');
+        const noticeActionBtn = document.getElementById('notice-action-btn');
+
+        // モーダルヘルパー
+        function showNotice(icon, title, htmlContent, actionText, actionCallback) {
+            noticeIcon.textContent = icon;
+            noticeTitle.textContent = title;
+            noticeBody.innerHTML = htmlContent;
+            if (actionText && actionCallback) {
+                noticeActionBtn.textContent = actionText;
+                noticeActionBtn.classList.remove('hidden');
+                noticeActionBtn.onclick = () => {
+                    actionCallback();
+                    closeNoticeModal();
+                };
+            } else {
+                noticeActionBtn.classList.add('hidden');
+            }
+            noticeModal.classList.remove('hidden');
+        }
+
+        function closeNoticeModal() {
+            noticeModal.classList.add('hidden');
+        }
+
+        noticeModal.addEventListener('click', (e) => {
+            if (e.target === noticeModal) closeNoticeModal();
+        });
+
+        // 0. コード全体をクリップボードにコピー（GitHub貼り付け用）
+        if (btnCopyCode) {
+            btnCopyCode.addEventListener('click', () => {
+                const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                const textarea = document.createElement('textarea');
+                textarea.value = fullHtml;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showNotice('📋', 'コードをコピーしました', '<p>GitHubのファイル編集画面にそのまま貼り付け（ペースト）できます。</p>');
+                } catch (err) {
+                    showNotice('⚠️', 'コピーに失敗しました', '<p>お使いのブラウザ設定をご確認ください。</p>');
+                }
+                document.body.removeChild(textarea);
+            });
+        }
+
+        // 1. 文字サイズ切り替え
+        const fontClasses = ['text-base', 'text-lg', 'text-xl'];
+        const fontLabels = ['標準', '中', '大'];
+        let currentFontIdx = 0;
+
+        btnFontSize.addEventListener('click', () => {
+            contentContainer.classList.remove(fontClasses[currentFontIdx]);
+            currentFontIdx = (currentFontIdx + 1) % fontClasses.length;
+            contentContainer.classList.add(fontClasses[currentFontIdx]);
+            fontSizeLabel.textContent = fontLabels[currentFontIdx];
+        });
+
+        // 2. 印刷 / PDF保存（iframeのブロックを突破する仕組み）
+        btnPrint.addEventListener('click', () => {
+            let printTriggered = false;
+            try {
+                window.print();
+                printTriggered = true;
+            } catch (err) {
+                console.warn('iframe内での印刷ブロックを検出:', err);
+            }
+
+            setTimeout(() => {
+                showNotice(
+                    '🖨️',
+                    'PDF保存・印刷の方法',
+                    `<p>iPhoneの画面下部にある<strong>「共有アイコン（四角から上矢印）」</strong>をタップし、<strong>「プリント」</strong>または<strong>「PDFを作成」</strong>を選択すると、きれいに保存できます。</p>
+                     <p class="pt-2 text-slate-500">※プレビュー専用ウィンドウから独立したウィンドウで開きますか？</p>`,
+                    '別画面で開く',
+                    () => {
+                        const newWin = window.open();
+                        if (newWin) {
+                            newWin.document.write('<!DOCTYPE html>\n' + document.documentElement.outerHTML);
+                            newWin.document.close();
+                            setTimeout(() => { newWin.print(); }, 500);
+                        }
+                    }
+                );
+            }, 300);
+        });
+
+        // 3. ネイティブ共有（ファイルを直接AirDropやLINE、メールに渡す）
+        btnShareFile.addEventListener('click', async () => {
+            const rawHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const blob = new Blob([rawHtml], { type: 'text/html;charset=utf-8' });
+            const file = new File([blob], '福岡市薬剤師連盟_Instagram発信指針.html', { type: 'text/html' });
+
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                try {
+                    await navigator.share({
+                        title: '福岡市薬剤師連盟 Instagram発信指針',
+                        text: '福岡市薬剤師連盟のInstagram発信指針と実務ハンドブックです。',
+                        files: [file]
+                    });
+                    return;
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        console.error('ファイル共有エラー:', err);
+                    }
+                }
+            }
+
+            try {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '福岡市薬剤師連盟_Instagram発信指針.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showNotice(
+                    '✅',
+                    'ファイルを保存しました',
+                    '<p>端末の「ファイル」アプリまたは「ダウンロード」にHTMLファイルを保存しました。</p>'
+                );
+            } catch (e) {
+                showNotice(
+                    '⚠️',
+                    'ファイル送信方法',
+                    '<p>Safariの「共有」ボタンからAirDropまたは「ホーム画面に追加」してご利用ください。</p>'
+                );
+            }
+        });
+
+        // タブ切り替え（災害と薬 / 高齢者）
+        function switchTab(tabKey) {
+            const disasterContent = document.getElementById('tab-content-disaster');
+            const elderlyContent = document.getElementById('tab-content-elderly');
+            const disasterBtn = document.getElementById('tab-btn-disaster');
+            const elderlyBtn = document.getElementById('tab-btn-elderly');
+
+            if (!disasterContent || !elderlyContent || !disasterBtn || !elderlyBtn) return;
+
+            if (tabKey === 'disaster') {
+                disasterContent.classList.remove('hidden');
+                elderlyContent.classList.add('hidden');
+                disasterBtn.className = "px-3 py-1 rounded-md font-medium transition-all bg-brand-600 text-white shadow-2xs";
+                elderlyBtn.className = "px-3 py-1 rounded-md font-medium transition-all text-slate-600 hover:text-slate-900";
+            } else {
+                disasterContent.classList.add('hidden');
+                elderlyContent.classList.remove('hidden');
+                elderlyBtn.className = "px-3 py-1 rounded-md font-medium transition-all bg-brand-600 text-white shadow-2xs";
+                disasterBtn.className = "px-3 py-1 rounded-md font-medium transition-all text-slate-600 hover:text-slate-900";
+            }
+        }
+
+        // チェックリスト集計
+        function updateCheckCount() {
+            const checkboxes = document.querySelectorAll('#checklist-items input[type="checkbox"]');
+            let count = 0;
+            checkboxes.forEach(cb => { if (cb.checked) count++; });
+
+            const scoreEl = document.getElementById('check-score');
+            const feedbackEl = document.getElementById('check-feedback');
+            if (scoreEl) scoreEl.textContent = count;
+
+            if (feedbackEl) {
+                if (count === 5) {
+                    feedbackEl.innerHTML = '<span class="text-emerald-700 font-bold">✨ 全ての視点を確認しました！発信の原点がしっかり保たれています。</span>';
+                    feedbackEl.className = 'mt-4 p-3 bg-emerald-50 border border-emerald-300 rounded-lg text-xs text-center';
+                } else {
+                    feedbackEl.innerHTML = `チェック中: <span class="font-bold text-brand-700">${count}</span> / 5 項目確認済み`;
+                    feedbackEl.className = 'mt-4 p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600 text-center';
+                }
+            }
+        }
+
+        function resetChecklist() {
+            const checkboxes = document.querySelectorAll('#checklist-items input[type="checkbox"]');
+            checkboxes.forEach(cb => cb.checked = false);
+            updateCheckCount();
+        }
+    </script>
+</body>
+</html>
