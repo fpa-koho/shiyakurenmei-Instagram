@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福岡市薬剤師連盟 Instagram発信戦略ハンドブック</title>
+    <style>
+        /* 基礎レイアウト・リセット */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            line-height: 1.8;
+            -webkit-text-size-adjust: 100%;
+        }
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 36px 28px;
+            min-height: 100vh;
+        }
+
+        /* 印刷・PDF保存時の最適化 */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .box-card, .table-box, .step-card, .level-card {
+                border-color: #cbd5e1 !important;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* ヘッダー */
+        .header {
+            border-bottom: 2px solid #0f766e;
+            padding-bottom: 18px;
+            margin-bottom: 26px;
+        }
+        .main-title {
+            font-size: 23px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+        }
+        .sub-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f766e;
+            margin-top: 5px;
+        }
+        .doc-lead {
+            font-size: 13px;
+            color: #475569;
+            margin-top: 10px;
+            line-height: 1.65;
+        }
+
+        /* 見出し */
+        h2 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 32px 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 14px;
+            font-weight: 800;
+            color: #0f766e;
+            margin: 18px 0 8px 0;
+        }
+        .badge {
+            background-color: #0f766e;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .badge-accent {
+            background-color: #c2410c;
+        }
+        .badge-dark {
+            background-color: #334155;
+        }
+
+        p {
+            font-size: 13.5px;
+            margin-bottom: 12px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        /* ボックス */
+        .box-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin: 14px 0 18px 0;
+        }
+        .box-warning {
+            border-left: 5px solid #ea580c;
+            background-color: #fff7ed;
+        }
+        .box-success {
+            border-left: 5px solid #0f766e;
+            background-color: #f0fdfa;
+        }
+        .box-neutral {
+            border-left: 5px solid #64748b;
+            background-color: #f8fafc;
+        }
+
+        /* テーブル */
+        .table-box {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12.5px;
+            margin: 14px 0 18px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .table-box th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            padding: 10px 12px;
+            font-weight: 800;
+            text-align: left;
+            border-bottom: 1px solid #cbd5e1;
+        }
+        .table-box td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .table-box tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* グリッドレイアウト */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 14px 0;
+        }
+        @media (min-width: 640px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        /* レベルアップ式のアクション表示 */
+        .level-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 11px 13px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 12.5px;
+        }
+        .level-badge {
+            background-color: #0f766e;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 11px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        /* コピペ用メッセージ枠 */
+        .code-box {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 6px;
+            padding: 12px 14px;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 10px 0 14px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        /* チェックリスト */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 7px;
+            font-size: 13px;
+        }
+        .check-item input {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            accent-color: #0f766e;
+        }
+
+        .footer-note {
+            margin-top: 32px;
+            padding-top: 14px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 11.5px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1 class="main-title">福岡市薬剤師連盟 Instagram発信戦略ハンドブック</h1>
+            <div class="sub-title">政治的無関心層へ届けるための客観的アプローチ</div>
+            <p class="doc-lead">
+                本稿は、投稿表現の細部を縛るマニュアルではありません。なぜ従来の発信手法が成果に結びつきにくかったのかを行動事実から検証し、組織が持つ危機感を、いかにして若手の関心獲得や政治的基盤の強化といった実効性のある成果へつなげるかをまとめた実務指針です。
+            </p>
+        </header>
+
+        <!-- 第1章：現状と行動事実の検証 -->
+        <h2><span class="badge badge-accent">第1章</span>「政治的無関心への危機感」と、従来手法の検証</h2>
+
+        <p>
+            連盟の発信を担う役員や先輩世代の根底には、<strong>「現場の若手が政治にあまりにも無関心であることへの強い危機感」</strong>があります。調剤報酬改定や医療制度改革など、環境変化のスピードが極めて速い現在、政治とのパイプを維持し、現場の声を反映させる仕組みを守ることは組織として不可欠な責務です。そのため、「政治に関心を持ってもらいたい」「応援する議員との連携をしっかり示したい」と考える動機そのものは極めて自然であり、正当なものです。
+        </p>
+
+        <p>
+            一方で、この課題を単に「若手個人の無関心や意識の低さ」として片付けることはできません。なぜ現在の若い世代は、現場の困りごとと政治がどう接続しているのかを学ぶ機会を持てず、<strong>「医療従事者は本質的に行政や国の政策と深く関わる専門職である」という社会観が成熟しづらい状況</strong>に置かれているのか。大学教育や社会全体の構造的背景を客観的に整理しておく必要があります。
+        </p>
+
+        <div class="box-card box-neutral">
+            <div style="font-weight: 800; font-size: 13px; color: #0f172a; margin-bottom: 6px;">
+                専門職としての社会観・政策接続が成熟しづらい4つの構造的要因
+            </div>
+            <ol style="font-size: 12px; color: #334155; margin-left: 18px; line-height: 1.7;">
+                <li><strong>大学教育における専門技術偏重と「政策・社会観」教育の不在：</strong><br>6年制化に伴い、薬理・病態・調剤手技などの習得や共用試験・国家試験対策にカリキュラムの多くが割かれ、医療法制や社会保障制度がどのような政治的議論や議会プロセスを経て形づくられるのかを学ぶ機会が手薄な状態が続いています。その結果、自らを「公的な制度を社会とともに形づくる主体」としてではなく、「規定されたルールの枠内で正確に業務をこなす技術者」として捉えやすくなっています。</li>
+                <li><strong>一般社会における「専門職と公の関わり」の希薄さ：</strong><br>社会全体において、政治や行政への関与が「特定の思想や利権活動」として捉えられがちな風潮があり、医療専門職が国民生活や地域保健を守るために政策形成へ関与することの正当性や公共的な意義（社会観）を自然に身につける環境自体が整っていません。</li>
+                <li><strong>制度拡大期から管理期への環境変化：</strong><br>かつての分業拡大期には、現場が政治を強く意識せずとも日々の業務や経営が成立していました。しかし近年、財政制約による細かな制度コントロール期へ急変したことで、現場は日々の業務対応や算定要件の消化に追われ、その背景にある「制度が決められる力学」を俯瞰する時間的・心理的余裕を失っています。</li>
+                <li><strong>大手志向による「一般オフィスワーカー（企業雇用者）意識」の定着：</strong><br>薬学生の進路として大手調剤チェーンや大規模病院が主流となった現在、「就職して安定を得る」という一般的なオフィスワーカーと同様の就業感覚が定着しています。制度交渉や業界活動は「自社の経営陣や業界団体が対応するもの」と受け止められやすく、勤務薬剤師として日々の業務をこなす中で、自身が「制度を動かす当事者」であるという意識や、地域の連盟活動の意義を先輩世代から直接対話で教わる機会そのものが失われています。</li>
+            </ol>
+            <p style="font-size: 11.5px; color: #64748b; margin-top: 8px; margin-bottom: 0;">
+                大学教育や一般社会の中で専門職としての社会観を育む機会を持てなかった世代に対して、前提知識の共有なしに政治の話題をぶつけても接続が生まれないのは、世代個人の資質ではなく構造の要因です。
+            </p>
+        </div>
+
+        <div class="box-card box-warning">
+            <div style="font-weight: 800; color: #c2410c; font-size: 13.5px; margin-bottom: 6px;">
+                「連盟」という名称と政治露出が引き起こす行動反応
+            </div>
+            <p style="font-size: 12.5px; margin-bottom: 8px; color: #9a3412;">
+                アカウント名に「連盟」という文字が含まれ、タイムラインに「議員との面会写真」「会議室での集合写真」「政治への参加を呼びかける文面」が流れてきた場合、利用者の画面上では以下のような反応が起こります。
+            </p>
+            <ul style="font-size: 12px; color: #7c2d12; margin-left: 18px; line-height: 1.7;">
+                <li><strong>文字の連想記憶による警戒：</strong><br>「会」が安心や公益を連想させるのに対し、「連盟」という文字は「政治連盟・陳情・利権・選挙」といった記憶を喚起しやすく、無関心層に無意識の身構えを生じさせます。</li>
+                <li><strong>閲覧即時離脱（0.5秒スワイプ）：</strong><br>画面を見た瞬間に「自分とは関係のない特定の政治組織の宣伝」と判断され、本文を読む前に画面から離脱されます。</li>
+                <li><strong>フォロー躊躇バイアス：</strong><br>若手薬剤師や一般利用者は、「このアカウントをフォローすると、同僚や知人に特定の政治活動に肩入れしていると見られるのではないか」という懸念を抱き、フォローを躊躇する傾向があります。</li>
+                <li><strong>紹介したい議員のイメージへの影響：</strong><br>背景や文脈が伝わらないまま写真だけが提示されると、「何かを働きかけてくる遠い存在」と受け取られ、親しみや支持につながりにくくなります。</li>
+            </ul>
+        </div>
+
+        <h3>他連盟・先行事例の客観的分析</h3>
+        <div class="grid-2col">
+            <div class="box-card" style="margin: 0;">
+                <div style="font-weight: 800; font-size: 13px; color: #c2410c; margin-bottom: 4px;">好ましくない典型事例（内輪消費型）</div>
+                <ul style="font-size: 12px; color: #475569; margin-left: 16px; line-height: 1.6;">
+                    <li><strong>総会・研修会の横断幕写真：</strong>参加役員同士が「いいね」を押すだけでリーチは数十回にとどまり、外部には閉鎖的に映る。</li>
+                    <li><strong>議員会館前での直立記念撮影：</strong>「陳情政治」「上層部の既得権益」に見え、若手に「挨拶回りだけでは？」という疑問を生む。</li>
+                    <li><strong>直球の参加呼びかけ動画：</strong>冒頭で「勧誘」と判定され、90%以上が即座に離脱する。</li>
+                </ul>
+            </div>
+            <div class="box-card" style="margin: 0;">
+                <div style="font-weight: 800; font-size: 13px; color: #0f766e; margin-bottom: 4px;">成果を出している好事例（共感波及型）</div>
+                <ul style="font-size: 12px; color: #475569; margin-left: 16px; line-height: 1.6;">
+                    <li><strong>「現場の困りごと × 制度解説」：</strong>「なぜ咳止めが入荷しないのか？」という調剤棚の写真から入り、薬価制度の課題と議会への要請活動を解説。共感と支持を獲得。</li>
+                    <li><strong>「政策が現場に届いたビフォー・アフター」：</strong>算定要件見直しなどで現場の負担がどう減ったかを図解。「連盟が現場を守っている」実利が伝わる。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第2章：方法論としての「暮らし」起点 -->
+        <h2><span class="badge">第2章</span>方法論としての「暮らし」起点と動線設計</h2>
+
+        <p>
+            政治に関心がない人が、政治や制度の重要性を認識するのはどのようなときでしょうか。演説や活動報告を読んだときではなく、<strong>「自分が日々の業務や生活で直面している困りごとが、実は制度や法律によって左右されている」と実感したとき</strong>です。
+        </p>
+
+        <p>
+            ここで必要になるのが、<strong>「暮らし（現場の現実）から入り、まちと政治の仕組みを考え、結果としてよりよい暮らしにつなげる」というアプローチ方法</strong>です。これは単なるスローガンではなく、相手の興味を引き止め、政治の必然性を理解してもらうための<strong>実務的な動線設計（方法論）</strong>です。
+        </p>
+
+        <table class="table-box">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">比較項目</th>
+                    <th style="width: 37%;">従来のやり方（直球型）</th>
+                    <th style="width: 38%;">見直したやり方（動線逆算型）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>発信の起点</strong></td>
+                    <td><strong>「政治・組織・議員」</strong><br>（例：〇〇議員と意見交換を行いました）</td>
+                    <td><strong>「現場の困りごと・手触りのある事実」</strong><br>（例：なぜ今、医薬品供給不足が現場で続くのか？）</td>
+                </tr>
+                <tr>
+                    <td><strong>初期の受け止め</strong></td>
+                    <td>「政治の宣伝か」「自分には無関係」<br>$\rightarrow$ <strong>即座にスワイプされる</strong></td>
+                    <td>「まさに職場で直面していることだ」<br>$\rightarrow$ <strong>手が止まり、最後まで読まれる</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>制度・政治の位置づけ</strong></td>
+                    <td>最初から前提として提示する</td>
+                    <td>困りごとの「原因」や「解決策」として解説する</td>
+                </tr>
+                <tr>
+                    <td><strong>議員の提示の仕方</strong></td>
+                    <td>写真を中心に前面に出す</td>
+                    <td><strong>「この現場課題を議会で前に進めている人物」</strong>として後半に提示する</td>
+                </tr>
+                <tr>
+                    <td><strong>得られる結果</strong></td>
+                    <td>内輪にとどまり、関心が広がりにくい</td>
+                    <td><strong>課題への関心と、議員の働きへの納得感が生まれる</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>名称が与える印象への実務的配慮</h3>
+        <p>
+            公式組織として「福岡市薬剤師連盟」を名乗る以上、名称がもたらす心理的ハードルを考慮した実務的な配慮を行います。
+        </p>
+        <div class="box-card box-neutral">
+            <ul style="font-size: 12px; color: #334155; margin-left: 18px; line-height: 1.7;">
+                <li><strong>アイコンの視覚的配慮：</strong> 堅苦しい組織紋章やバッジではなく、街の医療や薬を象徴する清潔感のある親しみやすいシンボルを用いる。</li>
+                <li><strong>プロフィール文の機能的定義：</strong> 「〇〇を支援する政治団体」ではなく、「現場の働きやすさと福岡の健康を守る『制度・ルールの仕組み』を分かりやすく解説するメディア」として位置づける。</li>
+                <li><strong>1枚目（表紙）での名称非表示：</strong> カルーセルの表紙画像には「連盟」のロゴや文字を載せず、「現場の疑問・事実」のテキストのみで指を止めさせる。</li>
+                <li><strong>解説トーンの維持：</strong> 「団結しよう」「〜すべき」という号令を排し、事実に基づいた誠実な解説文体に徹する。</li>
+            </ul>
+        </div>
+
+        <div class="box-card box-success">
+            <div style="font-weight: 800; color: #0f766e; font-size: 13.5px; margin-bottom: 6px;">
+                政治家への活動アピールと客観性の両立（ポスター型からレポート型へ）
+            </div>
+            <p style="font-size: 12.5px; margin-bottom: 8px; color: #115e59;">
+                組織として支援議員の活動や連携をアピールしたいという判断は組織運営上自然なものです。その発信を最大限に実効化するための運用手順です。
+            </p>
+            <ul style="font-size: 12px; color: #134e4a; margin-left: 18px; line-height: 1.7;">
+                <li><strong>表紙（1枚目）：</strong> 議員の顔や名前は出さず、現場の悩み・疑問のみで指を止めさせる。</li>
+                <li><strong>中盤（2〜3枚目）：</strong> 制度的な原因を客観的に解説する。</li>
+                <li><strong>後半（4〜6枚目）：</strong> 「この現状を打破するため、現場の要望書を受け取り議会で質問に立ってくれたのが〇〇議員である」と真剣な表情の写真（議場や視察風景）とともに提示する。</li>
+                <li><strong>写真の構図：</strong> 正面の笑顔・並び写真ではなく、現場で真剣にメモを取る姿や視察する姿を用いることで、若い世代に「本当に頼れる実力派の議員」として好印象を持たれます。</li>
+            </ul>
+        </div>
+
+        <!-- 第3章：会と連盟の役割分担 -->
+        <h2><span class="badge badge-dark">第3章</span>福岡市薬剤師会と福岡市薬剤師連盟の役割分担</h2>
+        <p>
+            同じ地域医療を見つめながら、両アカウントは切り口を分担し、相互に補完し合う関係を築きます。
+        </p>
+
+        <div class="grid-2col">
+            <div class="box-card" style="border-top: 4px solid #0284c7; margin: 0;">
+                <div style="font-weight: 800; font-size: 14.5px; color: #0f172a; margin-bottom: 4px;">福岡市薬剤師会（実践・支援）</div>
+                <p style="font-size: 12.5px; margin-bottom: 6px; color: #475569;">
+                    <strong>目的：</strong>地域の皆さんの健康と安心を守り、信頼の土台をつくる。<br>
+                    <strong>発信内容：</strong>
+                </p>
+                <ul style="font-size: 12px; color: #334155; margin-left: 16px; line-height: 1.65;">
+                    <li>薬や健康に関する実践的な知識（お薬手帳、受診の目安）</li>
+                    <li>薬剤師が地域で行っている支援活動の紹介</li>
+                    <li>生活者の目線に立った実用的な情報提供</li>
+                </ul>
+            </div>
+            <div class="box-card" style="border-top: 4px solid #0f766e; margin: 0;">
+                <div style="font-weight: 800; font-size: 14.5px; color: #0f172a; margin-bottom: 4px;">福岡市薬剤師連盟（仕組み・政策）</div>
+                <p style="font-size: 12.5px; margin-bottom: 6px; color: #475569;">
+                    <strong>目的：</strong>支援活動を継続するための制度・政策の基盤を整える。<br>
+                    <strong>発信内容：</strong>
+                </p>
+                <ul style="font-size: 12px; color: #334155; margin-left: 16px; line-height: 1.65;">
+                    <li>現場の困りごとの背景にある制度や予算の課題</li>
+                    <li>仕組みを改善するための政策的な取り組み</li>
+                    <li>現場と議会をつなぎ、制度を動かしていく過程の共有</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第4章：アルゴリズム学習と協力依頼 -->
+        <h2><span class="badge">第4章</span>Instagramアルゴリズム学習と実践協力ステップ</h2>
+        
+        <p>
+            協力を依頼する際、単なる「動員（お願い）」に終始すると義務感が生じて長続きしません。<strong>「なぜその操作をするのか」という最新のInstagramアルゴリズムの仕組みを共有することで、役員や青年部自身がSNSマーケティングを実践することになります。</strong>
+        </p>
+
+        <div class="box-card box-neutral">
+            <div style="font-weight: 800; font-size: 13.5px; color: #0f172a; margin-bottom: 6px;">
+                「見たよ」で終わる善意を力に変える：AIが評価する行動の序列
+            </div>
+            <p style="font-size: 12.5px; color: #334155; margin-bottom: 6px;">
+                現場では「画面を眺めて『見たよ』と言ってくれる方」がたくさんいます。しかし現在のAIは、<strong>「ただ眺めるだけ」だと「興味を持たれずに流された（低評価）」と判定</strong>してしまいます。この仕組みを客観的に共有し、無理のないステップアップで協力を力へと変えていきます。
+            </p>
+            <ul style="font-size: 12px; color: #475569; margin-left: 18px; line-height: 1.65;">
+                <li><strong>再投稿（リポスト） / DM共有【最高配点】：</strong>「自分のタイムラインに恒常的に残したい超重要情報」として最高位の評価を受ける。</li>
+                <li><strong>保存（しおりマーク）【極めて高配点】：</strong>「あとで見返す価値がある辞書のようなストック情報」と判定され、発見タブへ大放出される。</li>
+                <li><strong>閲覧維持時間（最後までめくる）【極めて高配点】：</strong>途中離脱せず最後まで読まれた投稿は、AIが「質の高いコンテンツ」と認識する。</li>
+                <li><strong>コメント欄のやり取り【高配点】：</strong>文字数に関係なく、会話が交わされている投稿を「地域の熱いコミュニティ」と判定する。</li>
+                <li><strong>いいね（❤️）【低配点】：</strong>流し見でも押せるため、アルゴリズム上の外部拡散力はほぼゼロ。</li>
+            </ul>
+        </div>
+
+        <div class="box-card box-success">
+            <div style="font-weight: 800; font-size: 13.5px; color: #0f766e; margin-bottom: 8px;">
+                アクションが1つ増えるごとに効果が跳ね上がる「5段階の協力ステップ」
+            </div>
+            
+            <div class="level-card">
+                <span class="level-badge">効果 +1</span>
+                <div>
+                    <strong>【最後までめくる（完読）】：</strong><br>
+                    「即座にスワイプされた」という低評価判定を防ぎ、AIに「ちゃんと読まれた良記事」と認識させる第一歩。
+                </div>
+            </div>
+
+            <div class="level-card">
+                <span class="level-badge">効果 +2</span>
+                <div>
+                    <strong>【保存（しおりマーク）を押す】：</strong><br>
+                    効果が跳ね上がります。AIが「有益なストック情報」と判断し、未フォロワーの発見タブへの推薦候補に入ります。
+                </div>
+            </div>
+
+            <div class="level-card">
+                <span class="level-badge">効果 +3</span>
+                <div>
+                    <strong>【絵文字1個（👏や💊など）をリアクション ＋ 運営側の返信】：</strong><br>
+                    <strong>文章を書く必要はありません。</strong>コメント欄を開いて絵文字をポンと送るだけで、AIは「能動的な強い関与」と判定します。さらに、公式側が「ありがとうございます！」と一言返すだけで、AIは<strong>「コメント欄でキャッチボール（会話）が発生した！」</strong>と判断し、拡散スコアが急上昇します。
+                </div>
+            </div>
+
+            <div class="level-card">
+                <span class="level-badge">効果 +4</span>
+                <div>
+                    <strong>【ストーリーズ引用でシェア（即効性の一次拡散）】：</strong><br>
+                    アルゴリズムの壁を突破し、協力者の個人的なつながり（同僚薬剤師や知人）へ24時間ダイレクトに情報が届きます。
+                </div>
+            </div>
+
+            <div class="level-card" style="border-left: 3px solid #0f766e; background-color: #f0fdf4;">
+                <span class="level-badge" style="background-color: #15803d;">効果 +5</span>
+                <div>
+                    <strong>【再投稿（リポスト）で恒久波及（最高峰のアクション）】：</strong><br>
+                    ストーリーズと異なり、<strong>24時間で消えることなく協力者自身のプロフィールやタイムラインに半永久的に残り続けます。</strong>自分のアカウントの看板を使って投稿を推す行為は、AIにとって「最大級の支持・推薦」とみなされ、発見タブやおすすめへの露出度が最大化されます。
+                </div>
+            </div>
+        </div>
+
+        <h3>青年部・役員LINEへの発信例（コピペ用）</h3>
+        <p style="font-size: 12.5px; color: #475569;">
+            義務感を排し、最新アルゴリズムの実験・学習として協力を呼びかける案内文例です。
+        </p>
+        <div class="code-box">【本日20:00 投稿公開のお知らせ & 最新アルゴリズムの協力実験】
+本日20時に、現場の「咳止め不足と制度の壁」に関する投稿を公開します！
+
+実は今のInstagramのAIは、「いいね」だけだと「流し見された」と判定して福岡の人たちに広げてくれません…。
+①最後までめくる ➔ ②保存（しおり） ➔ ③絵文字1個（👏など） ➔ ④ストーリーズ引用 ➔ ⑤再投稿（リポスト）
+の順でリアクションが積み上がるごとに、AIが「超優良投稿」と判定して外部へ一気に拡散する仕組みになっています。
+
+文章を考える必要はありません！絵文字1個ポンと押してくれるだけでも絶大なブースターになります。
+さらに「再投稿（リポスト）」まで行くと、24時間で消えずにタイムラインに残り続け、AIからの評価が満点になります。
+ぜひ最新アルゴリズムの実験も兼ねて、投稿直後にできる範囲のアクションを試してみてください！</div>
+
+        <!-- 第5章：手元の素材を活かす省力化と継続ルール -->
+        <h2><span class="badge">第5章</span>手元の素材を活かす省力化と継続ルール</h2>
+        <p>
+            高度な編集技術やデザイン作成に時間を奪われ、発信が途絶えてしまうことを防ぐための現実的な実務ルールです。
+        </p>
+
+        <div class="grid-2col">
+            <div class="box-card" style="margin: 0;">
+                <div style="font-weight: 800; font-size: 13px; color: #0f172a; margin-bottom: 4px;">1. デザインの型（テンプレート）を固定する</div>
+                <p style="font-size: 12px; color: #475569; margin: 0;">
+                    Canvaなどで「白地に緑の帯」の表紙テンプレートを1つだけ作成し、文字を打ち替えるだけで3分で表紙を完成させる。毎回デザインに悩まない。
+                </p>
+            </div>
+            <div class="box-card" style="margin: 0;">
+                <div style="font-weight: 800; font-size: 13px; color: #0f172a; margin-bottom: 4px;">2. 手元の面談写真をそのまま活かす</div>
+                <p style="font-size: 12px; color: #475569; margin: 0;">
+                    撮り直す必要はありません。「1枚目に現場の問いかけ文字」を挟み、2枚目に「手元の面談写真」を配置してキャプションで「この課題を解決するため面会した」と書くだけで立派なレポートになります。
+                </p>
+            </div>
+            <div class="box-card" style="margin: 0;">
+                <div style="font-weight: 800; font-size: 13px; color: #0f172a; margin-bottom: 4px;">3. リールは無編集で成立させる</div>
+                <p style="font-size: 12px; color: #475569; margin: 0;">
+                    薬局の手元作業や街の風景をスマホで5〜7秒撮影し、Instagram上で文字を1行打ってBGMを選ぶだけ（所要時間2分）で、凝った動画よりも高い親近感と再生数を獲得できます。
+                </p>
+            </div>
+            <div class="box-card" style="margin: 0;">
+                <div style="font-weight: 800; font-size: 13px; color: #0f172a; margin-bottom: 4px;">4. 原案作成はAIを活用する</div>
+                <p style="font-size: 12px; color: #475569; margin: 0;">
+                    面談の箇条書きメモからAIに下書きを作成させ、手直しする運用にすることで、文章作成の負担を大幅に削減します。
+                </p>
+            </div>
+        </div>
+
+        <!-- 第6章：投稿前チェックリスト -->
+        <h2><span class="badge">第6章</span>投稿前の確認チェックリスト</h2>
+        <p>
+            投稿を公開する前に、以下の項目に沿って内容を確認します。
+        </p>
+
+        <label class="check-item">
+            <input type="checkbox">
+            <span><strong>入口の確認：</strong>1枚目の画像は、政治色や組織名ではなく「現場の困りごとや身近な疑問」から始まっているか。</span>
+        </label>
+        <label class="check-item">
+            <input type="checkbox">
+            <span><strong>画像内容の確認：</strong>挨拶写真だけでなく、課題の背景やデータなど「手触りのある事実」が盛り込まれているか。</span>
+        </label>
+        <label class="check-item">
+            <input type="checkbox">
+            <span><strong>展開順序の確認：</strong>「身近な課題 $\rightarrow$ 制度的原因 $\rightarrow$ 取り組む議員や活動」の順で展開されているか。</span>
+        </label>
+        <label class="check-item">
+            <input type="checkbox">
+            <span><strong>受け手視点の確認：</strong>政治に関心の薄い若手が見た際に、一方的な呼びかけや組織の宣伝に感じられない工夫がされているか。</span>
+        </label>
+        <label class="check-item">
+            <input type="checkbox">
+            <span><strong>省力化の確認：</strong>無理な編集やデザイン作成で担当者が疲弊せず、継続できる形式になっているか。</span>
+        </label>
+        <label class="check-item">
+            <input type="checkbox">
+            <span><strong>初動体制の確認：</strong>協力者へ連絡が渡り、「めくる・保存・絵文字・ストーリーズ・再投稿」のアクションを積み上げる体制が整っているか。</span>
+        </label>
+
+        <div class="footer-note">
+            福岡市薬剤師連盟 広報実務資料
+        </div>
+    </div>
+
+</body>
+</html>
